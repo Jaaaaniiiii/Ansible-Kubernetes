@@ -307,6 +307,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 # Install kubectl
 sudo snap install kubectl --classic
 ```
+<img width="939" height="582" alt="image" src="https://github.com/user-attachments/assets/f0f106ae-8d47-4ac6-8f4a-1400a06ab47c" />
 
 ---
 
@@ -322,6 +323,7 @@ minikube status
 # Cek nodes
 kubectl get nodes
 ```
+<img width="939" height="865" alt="image" src="https://github.com/user-attachments/assets/6d64cdf7-e91d-40ab-bff5-0c379b592f66" />
 
 ---
 
@@ -344,6 +346,7 @@ spec:
     - containerPort: 80
 EOF
 ```
+<img width="1113" height="327" alt="image" src="https://github.com/user-attachments/assets/a9e42b5c-9bca-4b8a-b899-099b46fe6117" />
 
 ---
 
@@ -362,6 +365,9 @@ kubectl describe pod nginx-pod
 # Logs pod
 kubectl logs nginx-pod
 ```
+<img width="1113" height="286" alt="image" src="https://github.com/user-attachments/assets/2d174b47-c2ac-4dce-8af5-5fc3d571d440" />
+<img width="1113" height="309" alt="image" src="https://github.com/user-attachments/assets/989f9d35-c437-452b-8185-1e618afa0fd1" />
+<img width="1113" height="439" alt="image" src="https://github.com/user-attachments/assets/d60bea63-b983-4c05-a0d5-c0f292e5d272" />
 
 ---
 
@@ -399,6 +405,7 @@ spec:
             cpu: "200m"
 EOF
 ```
+<img width="1113" height="663" alt="image" src="https://github.com/user-attachments/assets/d91f294b-ed50-48e5-8470-e5b6e59ea199" />
 
 ## Deployment vs Pod
 
@@ -422,6 +429,7 @@ kubectl scale deployment nginx-deployment --replicas=5
 # Cek lagi
 kubectl get pods
 ```
+<img width="1054" height="923" alt="image" src="https://github.com/user-attachments/assets/28ac08c6-7f49-4dd7-afba-1f3232fc2d37" />
 
 ---
 
@@ -443,28 +451,24 @@ spec:
   type: NodePort
 EOF
 ```
-
-Apply service:
+<img width="1054" height="312" alt="image" src="https://github.com/user-attachments/assets/2a973e83-885d-447c-8d28-f54e55c54c2c" />
 
 ```bash
+# Apply service:
 kubectl apply -f service-nginx.yml
-```
 
-Cek service:
-
-```bash
+# Cek service:
 kubectl get service nginx-service
-```
 
-Akses service:
-
-```bash
+# Akses service:
 # Mendapatkan URL
 minikube service nginx-service --url
 
 # Membuka browser otomatis
 minikube service nginx-service
 ```
+<img width="1054" height="310" alt="image" src="https://github.com/user-attachments/assets/559fb6e5-9c75-4832-8bc3-696761d80cf9" />
+<img width="1014" height="310" alt="image" src="https://github.com/user-attachments/assets/1ee946e4-21bb-498b-8566-832e47a8ba5e" />
 
 ---
 
@@ -480,6 +484,7 @@ kubectl delete pod nginx-deployment-xxx-yyy
 # Observe auto-healing
 kubectl get pods -w
 ```
+<img width="1014" height="397" alt="image" src="https://github.com/user-attachments/assets/7d5514c8-76f2-4190-a674-bd3607c486c1" />
 
 Tekan `Ctrl + C` untuk berhenti watch.
 
@@ -504,6 +509,7 @@ kubectl rollout history deployment/nginx-deployment
 # Rollback jika ada masalah
 kubectl rollout undo deployment/nginx-deployment
 ```
+<img width="1118" height="1278" alt="image" src="https://github.com/user-attachments/assets/460b896b-ba83-428b-a17e-543f442bed78" />
 
 ---
 
